@@ -4,7 +4,7 @@ from videofeed import VideoFeed
 import sys
 
 class Client:
-    def __init__(self, ip_addr = "127.0.0.1"):
+    def __init__(self, ip_addr = "192.168.43.232"):
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect((ip_addr, 6000))
         self.vsock = videosocket.videosocket (self.client_socket)
@@ -19,7 +19,7 @@ class Client:
             self.videofeed.set_frame(frame)
 
 if __name__ == "__main__":
-    ip_addr = "127.0.0.1"
+    ip_addr = "192.168.1.105"
     if len(sys.argv) == 2:
         ip_addr = sys.argv[1]
 
